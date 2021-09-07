@@ -81,9 +81,25 @@ const STYLES_INPUT = ({
   border: none;
   border-bottom: 0.5rem solid;
   padding: 1rem 0;
-  font-size: 18rem;
+  font-size: 6rem;
   background: ${Constants.colors.white};
   transition: all 0.4s;
+
+  @media screen and (min-width: ${Constants.sizes.sm}) {
+    font-size: 10rem;
+
+    ${hasSearchResults &&
+    `font-size: 1.8rem;
+  `};
+  }
+
+  @media screen and (min-width: ${Constants.sizes.md}) {
+    font-size: 18rem;
+
+    ${hasSearchResults &&
+    `font-size: 1.8rem;
+  `};
+  }
 
   ${hasSearchResults &&
   `font-size: 1.8rem;
@@ -92,7 +108,7 @@ const STYLES_INPUT = ({
   box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
   max-width: 60rem;
   padding: 2rem;
-  margin-top: -3rem;`}
+  margin-top: -3rem;`};
 
   :focus {
     outline: none;
